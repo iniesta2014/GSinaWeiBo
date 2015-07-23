@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout android:orientation="vertical"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	android:background="@drawable/list_item_bg"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	
+	<include android:id="@+id/newblog_title" layout="@layout/back_send_layout" />
+<RelativeLayout 
+	    android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<RelativeLayout android:id="@+id/relative_bottom"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true">
+			<include layout="@layout/title_bottom_bg" android:id="@+id/tit_control" />
+		</RelativeLayout>
+		<RelativeLayout android:layout_width="fill_parent"
+			android:layout_height="fill_parent" android:layout_above="@id/relative_bottom"
+			android:layout_alignParentTop="true">
+			<!-- 默认android:visibility="invisible" -->
+			<LinearLayout android:orientation="horizontal"
+				android:id="@+id/linear_progress" android:visibility="gone"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:layout_alignParentBottom="true">
+				<ProgressBar android:id="@+id/progress_location"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_margin="2.0dip" android:indeterminateDrawable="@drawable/progress_small"
+					style="\@android:style/Widget.ProgressBar.Small" />
+				<!-- 进度条后面的文字 -->
+				<TextView android:text="正在发送中....." android:gravity="right|center"
+					android:layout_gravity="right|center_horizontal" android:id="@+id/text_location"
+					android:layout_width="wrap_content" android:layout_height="16.0dip"
+					android:layout_margin="2.0dip" />
+			</LinearLayout>
+			<EditText android:gravity="top" android:id="@+id/etBlog"
+				android:background="@null" android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:bufferType="spannable"
+				android:layout_above="@id/linear_progress" />
+			
+			
+			<LinearLayout android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:layout_alignBottom="@id/etBlog"
+				android:layout_alignRight="@id/etBlog">
+				
+				<include android:layout_gravity="bottom" layout="@layout/write_limits_bg"></include>
+			</LinearLayout>
+		</RelativeLayout>
+	</RelativeLayout>
+	
+</LinearLayout>
